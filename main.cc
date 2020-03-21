@@ -1,6 +1,5 @@
 #include "SequentialList.h"
 
-#include <string>
 int main(int argc, char **argv) {
   const size_t cap = 10;
   SequentialList<int> s(cap);
