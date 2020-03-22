@@ -12,7 +12,7 @@ TEST(Suite1, Test1) {
 
   size_t n = 0;
   for (int t : s) {
-    EXPECT_EQ(t, n);
+    EXPECT_EQ(t, n + 1);
     ++n;
   }
 
