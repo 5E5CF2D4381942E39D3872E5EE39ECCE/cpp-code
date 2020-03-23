@@ -7,27 +7,19 @@
 // #include "SequentialList3.h"
 // #include "LinkedList.h"
 // #include "LinkedList2.h"
-#include "Stack.h"
+// #include "Stack.h"
+#include "BracketMatching.h"
 
 // void foo(int t) { std::cout << t << std::endl; }
 
-// test for push & pop & isEmpty
+// test for BMatch
 TEST(Suite1, Test1) {
-  Stack<int> a;
-  const size_t cap = 10;
-  int n = 0;
-  while (n < cap) {
-    a.push(n + 1);
-    ++n;
-  }
-  EXPECT_EQ(n, cap);
+  BMatch b_match;
+  std::string text = "[](int a) { std::cout << a << std::endl; }";
+  std::string text2 = "[](int a) { std::cout << a << std::endl; }}";
 
-  while (!a.isEmpty()) {
-    EXPECT_EQ(n, a.top());
-    a.pop();
-    --n;
-  }
-  EXPECT_EQ(n, 0);
+  EXPECT_EQ(true, b_match(text));
+  EXPECT_EQ(false, b_match(text2));
 }
 
 int main(int argc, char **argv) {
