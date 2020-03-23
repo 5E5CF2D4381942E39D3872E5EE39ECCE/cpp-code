@@ -70,7 +70,7 @@ class SequentialList3 {
 
   bool isEmpty() const { return 0 == size(); }
 
-  value_type get(size_type index) {
+  value_type get(size_type index) const {
     if (index > size() - 1) throw std::out_of_range(__func__);
     return _M_start[index];
   }
@@ -91,7 +91,7 @@ class SequentialList3 {
   iterator begin() { return _M_start; }
   iterator end() { return _M_finish; }
 
- private:
+ protected:
   pointer_to_value _M_start;
   pointer_to_value _M_finish;
   pointer_to_value _M_end_of_storage;
