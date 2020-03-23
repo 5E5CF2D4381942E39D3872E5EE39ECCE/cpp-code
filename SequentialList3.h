@@ -71,7 +71,7 @@ class SequentialList3 {
   bool isEmpty() const { return 0 == size(); }
 
   value_type get(size_type index) const {
-    if (index > size() - 1) throw std::out_of_range(__func__);
+    if (index + 1 > size()) throw std::out_of_range(__func__);
     return _M_start[index];
   }
 

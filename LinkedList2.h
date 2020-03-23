@@ -48,7 +48,7 @@ class LinkedList2 {
   }
 
   value_type remove(size_type index) {
-    if (index < 0 || index > size() - 1) throw std::out_of_range(__func__);
+    if (index < 0 || index + 1 > size()) throw std::out_of_range(__func__);
 
     if (!index) {
       // remove from the head
@@ -98,7 +98,7 @@ class LinkedList2 {
   }
 
   value_type get(size_type index) const {
-    if (index < 0 || index > size() - 1) throw std::out_of_range(__func__);
+    if (index < 0 || index + 1 > size()) throw std::out_of_range(__func__);
 
     size_type n = index;
     iterator it = begin();
@@ -111,7 +111,7 @@ class LinkedList2 {
   }
 
   bool set(size_type index, const value_type &v) {
-    if (index < 0 || index > size() - 1) return false;
+    if (index < 0 || index + 1 > size()) return false;
 
     size_type n = index;
     iterator it = begin();
