@@ -13,7 +13,7 @@ class Stack : protected SequentialList3<T> {
   void push(const value_type &elem) { base_type::insert(size(), elem); }
   void pop() { base_type::remove(size() - 1); }
   value_type top() const { return base_type::get(size() - 1); }
-  
+
   bool isEmpty() const { return base_type::isEmpty(); }
   size_type size() const { return base_type::size(); }
 };
