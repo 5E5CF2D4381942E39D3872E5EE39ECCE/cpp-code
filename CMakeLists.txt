@@ -10,9 +10,12 @@ enable_testing()
 find_package(GTest CONFIG REQUIRED)
 
 add_executable(demo1 demo1.cc)
+add_executable(main main.cc)
 
 target_link_libraries(demo1 PRIVATE GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_main)
+target_link_libraries(main PRIVATE GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_main)
 add_test(demo1-test demo1)
+add_test(main-test main)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
